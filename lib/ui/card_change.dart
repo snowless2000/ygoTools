@@ -66,21 +66,21 @@ class _CardChangePageState extends State<CardChangePage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(sample? "此图为样例，请勿保存":"",
-                    style: TextStyle(fontSize: 20, color: Colors.red)),
+                    style: const TextStyle(fontSize: 20, color: Colors.red)),
                 ElevatedButton(
-                    onPressed: chooseOriginalCardImage, child: Text("选择原卡图")),
-                SizedBox(height: 20,),
+                    onPressed: chooseOriginalCardImage, child: const Text("选择原卡图")),
+                const SizedBox(height: 20,),
                 ElevatedButton(
-                    onPressed: chooseNewCardImage, child: Text("选择替换图")),
-                SizedBox(height: 20,),
+                    onPressed: chooseNewCardImage, child: const Text("选择替换图")),
+                const SizedBox(height: 20,),
                 ElevatedButton(
-                    onPressed: saveCardImage, child: Text("应用卡图替换")),
-                SizedBox(height: 20,),
+                    onPressed: saveCardImage, child: const Text("应用卡图替换")),
+                const SizedBox(height: 20,),
                 ElevatedButton(
-                    onPressed: backToDefault, child: Text("恢复全部原卡图")),
+                    onPressed: backToDefault, child: const Text("恢复全部原卡图")),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               width: 50,
             ),
             Column(
@@ -211,7 +211,7 @@ class _CardChangePageState extends State<CardChangePage> {
         ConstUtils.CARD_IMAGE_HEIGHT;
     maxLeftOffset = maxLeftOffset > 0 ? maxLeftOffset : 1;
     maxTopOffset = maxTopOffset > 0 ? maxTopOffset : 1;
-    print("maxOffset: $maxLeftOffset, $maxTopOffset");
+    // print("maxOffset: $maxLeftOffset, $maxTopOffset");
   }
 
   Future<void> chooseNewCardImage() async {
