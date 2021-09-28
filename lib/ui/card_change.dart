@@ -5,12 +5,12 @@ import 'package:extended_image/extended_image.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:my_background_tool/data_class/const.dart';
 import 'package:image/image.dart' as dartImg;
 import 'package:my_background_tool/utils/tool_utils.dart';
 import 'package:widget_to_image/widget_to_image.dart';
 import 'custom_rect_clipper.dart';
-
 class CardChangePage extends StatefulWidget {
   const CardChangePage({Key? key}) : super(key: key);
 
@@ -32,13 +32,14 @@ class _CardChangePageState extends State<CardChangePage> {
   double maxLeftOffset = 0;
   double maxTopOffset = 0;
   double imgScale = 1.0;
-
+  bool sample = true;
   @override
   Widget build(BuildContext context) {
 
     ExtendedImage img;
     if (originalCardPath.isNotEmpty) {
       img = createExImage(originalCardPath);
+      sample = false;
     } else {
       img = createExImage(ConstUtils.SAMPLE_IMAGE);
     }
@@ -64,6 +65,8 @@ class _CardChangePageState extends State<CardChangePage> {
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
+                Text(sample? "此图为样例，请勿保存":"",
+                    style: TextStyle(fontSize: 20, color: Colors.red)),
                 ElevatedButton(
                     onPressed: chooseOriginalCardImage, child: Text("选择原卡图")),
                 SizedBox(height: 20,),
@@ -208,6 +211,7 @@ class _CardChangePageState extends State<CardChangePage> {
         ConstUtils.CARD_IMAGE_HEIGHT;
     maxLeftOffset = maxLeftOffset > 0 ? maxLeftOffset : 1;
     maxTopOffset = maxTopOffset > 0 ? maxTopOffset : 1;
+    print("maxOffset: $maxLeftOffset, $maxTopOffset");
   }
 
   Future<void> chooseNewCardImage() async {

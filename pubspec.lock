@@ -112,7 +112,7 @@ packages:
       name: file_picker
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "4.1.1"
+    version: "4.1.2"
   flutter:
     dependency: "direct main"
     description: flutter
