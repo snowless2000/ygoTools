@@ -22,8 +22,8 @@ class CardChangePage extends StatefulWidget {
 
 class _CardChangePageState extends State<CardChangePage> {
   String path = ToolUtils.getYGOPath();
-  double leftOffset = 100;
-  double topOffset = 200;
+  double leftOffset = 0;
+  double topOffset = 0;
   dartImg.Image? imageInfo;
 
   final GlobalKey _globalKey = GlobalKey();
